@@ -39,7 +39,6 @@ public class AutorDtoRequest {
 		return nome;
 	}
 
-
 	public String getEmail() {
 		return email;
 	}
@@ -53,5 +52,7 @@ public class AutorDtoRequest {
 	public AutorModel toModel() {
 		return new AutorModel(this.nome, this.email, this.descricao); 
 	}
+	
+	
 
 }
