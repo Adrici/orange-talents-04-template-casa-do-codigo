@@ -15,8 +15,8 @@ public class CategoriaNovaController {
 	@Autowired
 	private  CategoriaRepository categoriaRepository; 
 	
-	@Autowired
-	private ProibeCategoriaDuplicadaCategoriaValidator proibeCategoriaDuplicadaCategoriaValidator; 
+	/*@Autowired
+	private ProibeCategoriaDuplicadaCategoriaValidator proibeCategoriaDuplicadaCategoriaValidator;*/
 	
 
 	
@@ -32,9 +32,9 @@ public class CategoriaNovaController {
 	}
 	
 
-	@InitBinder
+	/*@InitBinder
 	public void init(WebDataBinder binder) {
 		binder.addValidators(proibeCategoriaDuplicadaCategoriaValidator);
 		
-	}
+	}*/ 
 }

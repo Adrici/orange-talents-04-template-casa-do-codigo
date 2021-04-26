@@ -1,13 +1,12 @@
 package br.com.zup.casa.codigo.categoria;
 
-
-import javax.persistence.JoinColumn;
 import javax.validation.constraints.NotBlank;
+import br.com.zup.casa.codigo.compartilhado.UniqueValue;
 
 public class CategoriaDtoRequest {
 	
 	@NotBlank 
-	@JoinColumn(unique = true) 
+	@UniqueValue(domainClass= CategoriaModel.class, fieldName ="nome")
 	private String nome;
 	
 	

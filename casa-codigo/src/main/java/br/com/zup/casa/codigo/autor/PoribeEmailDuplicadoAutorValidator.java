@@ -1,4 +1,11 @@
-package br.com.zup.casa.codigo.autor;
+
+/*
+ * IMPORTANTE
+ *Classe construída para invalidar cadastros repetidos ( email repetido do autor)...
+ *ela foi toda comentada, pois
+ * foi substitituida pelo uso da anotação @UniqueValue */
+ 
+/*package br.com.zup.casa.codigo.autor;
 
 import java.util.Optional;
 
@@ -33,4 +40,4 @@ public class PoribeEmailDuplicadoAutorValidator implements Validator {
 		}
 	}
 	 
-}
+}*/

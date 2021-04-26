@@ -7,6 +7,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import br.com.zup.casa.codigo.compartilhado.UniqueValue;
+
 
 //DtoRequest é os atributos obrigatorios que irão ser informados na AutorModel 
 //DtoRequest exige as anotações ( porque precisa validar as informações que vai receber antes de enviar pro banco de dados)
@@ -19,6 +21,7 @@ public class AutorDtoRequest {
 	@NotBlank 
 	@JoinColumn(unique = true) 
 	@Email
+	@UniqueValue(domainClass =AutorModel.class, fieldName = "email")
 	private String email;
 	
 	@NotBlank  @Size(max=400)

@@ -1,4 +1,4 @@
-package br.com.zup.casa.codigo.categoria;
+/*package br.com.zup.casa.codigo.categoria;
 
 import java.util.Optional;
 
@@ -34,4 +34,12 @@ public class ProibeCategoriaDuplicadaCategoriaValidator implements Validator{
 	}
 
 
-}
+
+}*/
+
+
+ /* IMPORTANTE
+ *Classe construída para invalidar cadastros repetidos ( email repetido do autor)...ela foi toda comentada, pois
+ * foi substitituida pelo uso da anotação @UniqueValue */
+
+

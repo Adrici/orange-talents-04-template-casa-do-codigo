@@ -19,8 +19,8 @@ public class AutorNovoController {
 	@Autowired
 	private  AutorRepository autorRepository; 
 	
-	@Autowired 
-	private  PoribeEmailDuplicadoAutorValidator poribeEmailDuplicadoAutorValidator; 
+	/*@Autowired 
+	private  PoribeEmailDuplicadoAutorValidator poribeEmailDuplicadoAutorValidator;*/ 
 		
 	@PostMapping
 	@Transactional
@@ -34,10 +34,10 @@ public class AutorNovoController {
 	}
 	
 	
-	@InitBinder
+	/*@InitBinder
 	public void init(WebDataBinder binder) {
-		binder.addValidators(poribeEmailDuplicadoAutorValidator); 
-	
-	} 
+		binder.addValidators(poribeEmailDuplicadoAutorValidator);
+	}  --- comentei porque havia usado somente com a classe proibe repeticao*/ 
 	
 }
+
