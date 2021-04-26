@@ -20,7 +20,7 @@ public class PoribeEmailDuplicadoAutorValidator implements Validator {
 	}
 
 	@Override
-	public void validate(Object target, Errors errors) {
+	public void validate(Object target, Errors errors) { 
 		if(errors.hasErrors()) {
 			return;
 		}
