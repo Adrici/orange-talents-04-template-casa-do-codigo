@@ -7,6 +7,9 @@ import javax.validation.constraints.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 
+import br.com.zup.casa.codigo.autor.AutorModel;
+import br.com.zup.casa.codigo.categoria.CategoriaModel;
+
 @Entity
 public class LivroModel {
 	
@@ -33,26 +36,26 @@ public class LivroModel {
 	@NotBlank
 	private int isbn; //identificador do livro -- tem que ser UniqueValue também 
 	
+	@NotNull
 	@Future
 	@JsonFormat(pattern="dd/MM/yyyy", shape = Shape.STRING)
 	private LocalDate dataPublicacao; 
 	
-	@NotNull
-	private Long idCategoria;
-	
-	@NotNull
-	private Long idAutor; 
+
+	@ManyToOne 
+	private AutorModel autor;
+	@ManyToOne 
+	private CategoriaModel categoria; 
+		
 
 	@Deprecated
 	public LivroModel() {
 		
-	}
+	} 
 	
-	//constructor
-	
-	public LivroModel(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo,
-			@NotBlank String sumario, @NotBlank @Min(20) BigDecimal preco, @Min(100) int numeroPaginas,
-			@NotBlank int isbn, @Future LocalDate dataPublicacao, @NotNull Long idCategoria, @NotNull Long idAutor) {
+	public LivroModel(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo, @NotBlank String sumario,
+			@NotBlank @Min(20) BigDecimal preco, @Min(100) int numeroPaginas, @NotBlank int isbn,
+			@NotNull @Future LocalDate dataPublicacao, AutorModel autor, CategoriaModel categoria) {
 		
 		this.titulo = titulo;
 		this.resumo = resumo;
@@ -61,36 +64,33 @@ public class LivroModel {
 		this.numeroPaginas = numeroPaginas;
 		this.isbn = isbn;
 		this.dataPublicacao = dataPublicacao;
-		this.idCategoria = idCategoria;
-		this.idAutor = idAutor;
+		this.autor = autor;
+		this.categoria = categoria;
 	}
-	
-	//getters 
-	
+
+	public Long getId() {
+		return id;
+	}
+
 	public String getTitulo() {
 		return titulo;
 	}
-
 
 	public String getResumo() {
 		return resumo;
 	}
 
-
 	public String getSumario() {
 		return sumario;
 	}
-
 
 	public BigDecimal getPreco() {
 		return preco;
 	}
 
-
 	public int getNumeroPaginas() {
 		return numeroPaginas;
 	}
-
 
 	public int getIsbn() {
 		return isbn;
@@ -100,15 +100,13 @@ public class LivroModel {
 		return dataPublicacao;
 	}
 
-
-	public Long getIdCategoria() {
-		return idCategoria;
+	public AutorModel getAutor() {
+		return autor;
 	}
 
-
-	public Long getIdAutor() {
-		return idAutor;
+	public CategoriaModel getCategoria() {
+		return categoria;
 	}
-	
+
 
 }
