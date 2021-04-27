@@ -65,8 +65,6 @@ public class LivroDtoRequest {
 	}
 	
 	
-	
-
 	public String getTitulo() {
 		return titulo;
 	}
@@ -119,6 +117,5 @@ public class LivroDtoRequest {
 		this.dataPublicacao = dataPublicacao;
 	} 
 	
-	
-	
+
 }
