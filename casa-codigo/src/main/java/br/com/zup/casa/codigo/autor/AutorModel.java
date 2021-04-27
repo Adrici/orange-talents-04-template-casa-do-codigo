@@ -1,7 +1,7 @@
 package br.com.zup.casa.codigo.autor;
 
-import java.time.LocalDateTime;
 
+import java.time.LocalDateTime;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -40,7 +40,6 @@ public AutorModel(@NotNull String nome, @Email String email, @NotNull @Size(max 
 		this.descricao = descricao;
 		this.dataCadastro = LocalDateTime.now(); 
 	}
-
 
 
 

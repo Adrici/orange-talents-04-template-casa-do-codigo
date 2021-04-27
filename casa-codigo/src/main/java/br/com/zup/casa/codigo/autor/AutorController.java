@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/autores")
-public class AutorNovoController {
+public class AutorController {
 	
 	//Response = Retornar em caso de 200 
 	//Request = Enviar para receber a resposta 

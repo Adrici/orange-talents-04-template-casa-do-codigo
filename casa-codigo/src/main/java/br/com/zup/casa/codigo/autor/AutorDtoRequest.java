@@ -1,10 +1,8 @@
 package br.com.zup.casa.codigo.autor;
 
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import br.com.zup.casa.codigo.compartilhado.UniqueValue;
