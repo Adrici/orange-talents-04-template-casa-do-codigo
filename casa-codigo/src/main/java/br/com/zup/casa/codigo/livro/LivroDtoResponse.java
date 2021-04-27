@@ -3,6 +3,8 @@ package br.com.zup.casa.codigo.livro;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class LivroDtoResponse {
 	
 	private Long id;
@@ -12,11 +14,10 @@ public class LivroDtoResponse {
 	private BigDecimal preco; 
 	private int numeroPaginas;
 	private int isbn; 
+	@JsonFormat
 	private LocalDate dataPublicacao;  
 	private Long idCategoria;
 	private Long idAutor;
-	
-
 		
 	
 	public LivroDtoResponse(LivroModel livro) {

@@ -26,14 +26,14 @@ public class LivroModel {
 	@NotBlank
 	private String sumario; //deve ser formato markdown 
 	
-	@NotBlank
+	@NotNull
 	@Min (value=20)
 	private BigDecimal preco; 
 	
 	@Min(100)
 	private int numeroPaginas;
 	
-	@NotBlank
+	@NotNull
 	private int isbn; //identificador do livro -- tem que ser UniqueValue também 
 	
 	@NotNull
@@ -42,7 +42,7 @@ public class LivroModel {
 	private LocalDate dataPublicacao; 
 	
 
-	@ManyToOne 
+	@ManyToOne
 	private AutorModel autor;
 	@ManyToOne 
 	private CategoriaModel categoria; 
