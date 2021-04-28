@@ -2,7 +2,7 @@ package br.com.zup.casa.codigo.livro;
 
 import java.util.List;
 import java.util.Optional;
-import javax.persistence.Cacheable;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -15,10 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import br.com.zup.casa.codigo.autor.AutorDtoRequest;
-import br.com.zup.casa.codigo.autor.AutorDtoResponse;
-import br.com.zup.casa.codigo.autor.AutorModel;
-import br.com.zup.casa.codigo.autor.AutorRepository;
 
 @RestController
 @RequestMapping ("/livros")
@@ -49,7 +45,7 @@ public class LivroController  {
 	}
 
 	 
-	/*//para listar por id a lista de livros --antes de ver a vídeo aula
+	//para listar por id a lista de livros --antes de ver a vídeo aula
 		@GetMapping("/{id}")
 		public ResponseEntity<LivroDtoResponse> listar(@PathVariable Long id) {
 		Optional<LivroModel> livro = livroRepository.findById(id);
@@ -58,7 +54,8 @@ public class LivroController  {
 		}
 		
 		return ResponseEntity.notFound().build();
-	}*/
-	
-	
+	}
+		
+		
+
 }

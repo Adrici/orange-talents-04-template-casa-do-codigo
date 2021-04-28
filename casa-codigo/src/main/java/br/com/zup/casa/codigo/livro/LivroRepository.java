@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LivroRepository extends JpaRepository<LivroModel, Long> {
-	Optional<LivroModel> findById(String id);
+	Optional<LivroModel> findById(Long id);
 }
 
