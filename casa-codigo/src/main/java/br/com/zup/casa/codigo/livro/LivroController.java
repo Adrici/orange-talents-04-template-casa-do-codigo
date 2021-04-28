@@ -49,7 +49,7 @@ public class LivroController  {
 	}
 
 	 
-	 //para listar por id a lista de livros --antes de ver a vídeo aula
+	/*//para listar por id a lista de livros --antes de ver a vídeo aula
 		@GetMapping("/{id}")
 		public ResponseEntity<LivroDtoResponse> listar(@PathVariable Long id) {
 		Optional<LivroModel> livro = livroRepository.findById(id);
@@ -58,7 +58,7 @@ public class LivroController  {
 		}
 		
 		return ResponseEntity.notFound().build();
-	}
+	}*/
 	
 	
 }
