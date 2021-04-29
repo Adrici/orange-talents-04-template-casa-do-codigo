@@ -1,10 +1,9 @@
-package br.com.zup.casa.codigo.estado;
+package br.com.zup.casa.codigo.cliente;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,23 +13,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping ("/estado")
-public class EstadoController {
-
+@RequestMapping ("/cliente")
+public class ClienteController {
 	@Autowired
-	private  EstadoRepository estadoRepository; 
+	private  ClienteRepository clienteRepository; 
 	
 	@PersistenceContext
 	private EntityManager emt;
 	
 	@PostMapping
 	@Transactional
-	public ResponseEntity<EstadoDtoResponse> cadastrar(@RequestBody @Valid EstadoDtoRequest request) {
+	public ResponseEntity<ClienteDtoResponse> cadastrar(@RequestBody @Valid ClienteDtoRequest request) {
 	
-		EstadoModel estado = request.toModel(emt); 
-		estadoRepository.save(estado); 
+		ClienteModel cliente = request.toModel(emt); 
+		clienteRepository.save(cliente); 
 		
-		return ResponseEntity.ok(new EstadoDtoResponse(estado)); 		
+		return ResponseEntity.ok(new ClienteDtoResponse(cliente)); 		
 	}
+	
 	
 }

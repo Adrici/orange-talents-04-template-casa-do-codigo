@@ -20,11 +20,12 @@ public class EstadoDtoRequest {
 
 @ExistsId(domainClass= PaisModel.class,fieldName="id")
 private Long idPais;
-	
+
 	public EstadoDtoRequest(@NotBlank String nomeEstado) {
 		
 		this.nomeEstado = nomeEstado;
 	}
+	
 
 //getters
 	public String getNomeEstado() {
