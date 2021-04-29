@@ -3,9 +3,10 @@ package br.com.zup.casa.codigo.cliente;
 import javax.persistence.EntityManager;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import org.hibernate.validator.constraints.br.CNPJ;
-import org.hibernate.validator.constraints.br.CPF;
+
 import org.springframework.util.Assert;
+
+import br.com.zup.casa.codigo.compartilhado.CpfOrCnpj;
 import br.com.zup.casa.codigo.compartilhado.ExistsId;
 import br.com.zup.casa.codigo.estado.EstadoModel;
 import br.com.zup.casa.codigo.pais.PaisModel;
@@ -20,8 +21,7 @@ public class ClienteDtoRequest {
 	private String sobrenome;
 	
 	@NotBlank
-	@CPF
-	@CNPJ
+	@CpfOrCnpj
 	private String documento;
 	
 	@NotBlank
@@ -35,7 +35,7 @@ public class ClienteDtoRequest {
 	@NotBlank
 	private String cep;
 	
-	@ExistsId(domainClass= PaisModel.class,fieldName="idPais", message="Id Inexistente!")
+	@ExistsId(domainClass= PaisModel.class,fieldName="id", message="Id Inexistente!")
 	private Long idPais;
 	private Long idEstado;
 	

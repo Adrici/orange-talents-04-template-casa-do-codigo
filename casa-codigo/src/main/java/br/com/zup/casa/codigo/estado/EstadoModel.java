@@ -28,6 +28,11 @@ public class EstadoModel {
 	this.nomeEstado = nomeEstado;
 	this.pais = pais;
 }
+	
+	@Deprecated 
+	public EstadoModel(){
+		
+	}
 
 	
 //getters 

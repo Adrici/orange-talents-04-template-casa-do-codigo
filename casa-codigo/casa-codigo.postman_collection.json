@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "cf51f7fa-01fe-4e0b-aaf2-342af1b486dc",
+		"name": "casa-codigo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST LIVROS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"titulo\": \"Adrici no pais da maravilhas\",\r\n\"resumo\": \"Era uma vez na zupppys...\",\r\n\"sumario\": \"Capitulo 1 - La viagem de la ninã\",\r\n\"preco\": \"30\",\r\n\"numeroPaginas\": \"101\",\r\n\"isbn\":\"12594\",\r\n\"dataPublicacao\": \"30/04/2021\",\r\n\"idCategoria\": \"2\",\r\n\"idAutor\":\"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/livros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"livros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST AUTORES",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nome\": \"Xpto\",\r\n\"email\": \"xpto@email.com\",\r\n\"descricao\": \"Olá, tudo bem?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/autores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST CATEGORIAS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nome\": \"fantasia\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST PAIS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nomePais\":\"Bolivia\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/pais",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pais"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST ESTADO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n\"nomeEstado\":\"La Paz\",\r\n\"idPais\": \"2\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/estado",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"estado"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BY ID LIVROS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/livros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"livros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL LIVROS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/livros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"livros"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
