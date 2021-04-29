@@ -6,14 +6,20 @@ import javax.validation.constraints.NotNull;
 
 import br.com.zup.casa.codigo.autor.AutorModel;
 import br.com.zup.casa.codigo.categoria.CategoriaModel;
+import br.com.zup.casa.codigo.compartilhado.ExistsId;
+import br.com.zup.casa.codigo.compartilhado.UniqueValue;
 import br.com.zup.casa.codigo.livro.LivroModel;
 import br.com.zup.casa.codigo.pais.PaisModel;
 
-public class EstadoDtoRequest {
+public class EstadoDtoRequest {  
 	@NotBlank
+	@UniqueValue(domainClass = PaisModel.class, fieldName = "nome")
 	private String nomeEstado;	
+	
 	@NotNull
-	private Long idPais;
+
+@ExistsId(domainClass= PaisModel.class,fieldName="id")
+private Long idPais;
 	
 	public EstadoDtoRequest(@NotBlank String nomeEstado) {
 		
