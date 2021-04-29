@@ -10,7 +10,6 @@ import org.springframework.util.Assert;
 
 
 public class ExistsIdValidator implements ConstraintValidator<ExistsId, Long>{
-
 	
 	private String domainAttribute;
 	private Class<?> klass;
@@ -27,9 +26,8 @@ public class ExistsIdValidator implements ConstraintValidator<ExistsId, Long>{
 	
 	@Override
 	public boolean isValid(Long value, ConstraintValidatorContext context) {
-		
-		
-		Query query = manager.createQuery("SELECT 1 FROM " + klass.getName() + " WHERE " + domainAttribute + "=:value");
+			
+		Query query = manager.createQuery("SELECT 1 FROM " + klass.getName() + " WHERE " + domainAttribute + " =:value");
 		query.setParameter("value", value);
 		List<?> list = query.getResultList();
 		Assert.isTrue(list.size() <=1, "Voce tem mais de um" +klass+"com o atributo" + domainAttribute + "com o valor =" +value );

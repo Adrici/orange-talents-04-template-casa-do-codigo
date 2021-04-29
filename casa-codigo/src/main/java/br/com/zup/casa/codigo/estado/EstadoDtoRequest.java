@@ -2,38 +2,38 @@ package br.com.zup.casa.codigo.estado;
 
 import javax.persistence.EntityManager;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
-import br.com.zup.casa.codigo.autor.AutorModel;
-import br.com.zup.casa.codigo.categoria.CategoriaModel;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import br.com.zup.casa.codigo.compartilhado.ExistsId;
-import br.com.zup.casa.codigo.compartilhado.UniqueValue;
-import br.com.zup.casa.codigo.livro.LivroModel;
+import br.com.zup.casa.codigo.compartilhado.UniqueEstadoPais;
 import br.com.zup.casa.codigo.pais.PaisModel;
 
+@UniqueEstadoPais
 public class EstadoDtoRequest {  
+	
 	@NotBlank
-	@UniqueValue(domainClass = PaisModel.class, fieldName = "nome")
+/*@UniqueValue(domainClass = PaisModel.class, fieldName = "nomeEstado")*/ //essa anotação caiu pq usamos uma personalizada para a classe toda - @UniqueEstadoPais
 	private String nomeEstado;	
 	
-	@NotNull
-
+	
 @ExistsId(domainClass= PaisModel.class,fieldName="id")
 private Long idPais;
 
-	public EstadoDtoRequest(@NotBlank String nomeEstado) {
+	public EstadoDtoRequest(@NotBlank @JsonProperty("nomeEstado") String nomeEstado) {
 		
 		this.nomeEstado = nomeEstado;
 	}
 	
-
 //getters
 	public String getNomeEstado() {
 		return nomeEstado;
 	}
-		
+			
+public Long getIdPais() {
+		return idPais;
+	}
+
 //construtor2 
-	public EstadoModel toModel(EntityManager emt) {
+public EstadoModel toModel(EntityManager emt) {
 		
 		PaisModel pais = emt.find(PaisModel.class, this.idPais);
 		return new EstadoModel(nomeEstado, pais);

@@ -1,9 +1,6 @@
 package br.com.zup.casa.codigo.cliente;
 
-
-
 public class ClienteDtoResponse {
-
 
 	private String email;
 	private String nome;

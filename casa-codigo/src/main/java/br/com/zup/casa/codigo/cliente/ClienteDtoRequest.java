@@ -3,9 +3,9 @@ package br.com.zup.casa.codigo.cliente;
 import javax.persistence.EntityManager;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-
+import org.hibernate.validator.constraints.br.CNPJ;
+import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.util.Assert;
-
 import br.com.zup.casa.codigo.compartilhado.ExistsId;
 import br.com.zup.casa.codigo.estado.EstadoModel;
 import br.com.zup.casa.codigo.pais.PaisModel;
@@ -18,8 +18,12 @@ public class ClienteDtoRequest {
 	private String nome;
 	@NotBlank
 	private String sobrenome;
+	
 	@NotBlank
+	@CPF
+	@CNPJ
 	private String documento;
+	
 	@NotBlank
 	private String endereco;
 	@NotBlank
@@ -31,7 +35,7 @@ public class ClienteDtoRequest {
 	@NotBlank
 	private String cep;
 	
-	@ExistsId(domainClass= PaisModel.class,fieldName="id", message="Id Inexistente!")
+	@ExistsId(domainClass= PaisModel.class,fieldName="idPais", message="Id Inexistente!")
 	private Long idPais;
 	private Long idEstado;
 	
@@ -102,12 +106,11 @@ public ClienteModel toModel(EntityManager emt) {
         EstadoModel estado = emt.find(EstadoModel.class, this.idEstado);
 
         Assert.state(pais != null, "País é um campo obrigatório!");
-        Assert.state(estado != null, "Estado um campo obrigatório!");
-
-        return new ClienteModel(idEstado, email, nome, sobrenome, documento, endereco, 
-        		complemento, cidade, pais, estado, telefone, cep);
-			
+       
+        ClienteModel cliente = new  ClienteModel(email, nome, sobrenome, documento, endereco, complemento, cidade, pais, telefone, cep);
+        if(estado != null ) cliente.setEstado(estado);
+        	
+        return new ClienteModel(email, nome, sobrenome, documento, endereco, complemento, cidade, pais, telefone, cep);
 	}
-
 
 }

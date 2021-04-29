@@ -48,9 +48,9 @@ public class ClienteModel {
 	}
 	
 	//construtores
-	public ClienteModel(Long id, @NotBlank @Email String email, @NotBlank String nome, @NotBlank String sobrenome,
+	public ClienteModel(@NotBlank @Email String email, @NotBlank String nome, @NotBlank String sobrenome,
 			@NotBlank String documento, @NotBlank String endereco, @NotBlank String complemento,
-			@NotBlank String cidade, PaisModel pais, EstadoModel estado, @NotBlank String telefone,
+			@NotBlank String cidade, PaisModel pais, @NotBlank String telefone,
 			@NotBlank String cep) {
 		this.email = email;
 		this.nome = nome;
@@ -60,7 +60,6 @@ public class ClienteModel {
 		this.complemento = complemento;
 		this.cidade = cidade;
 		this.pais = pais;
-		this.estado = estado;
 		this.telefone = telefone;
 		this.cep = cep;
 		
@@ -116,7 +115,12 @@ public class ClienteModel {
 	public String getCep() {
 		return cep;
 	}
-
 	
+	//----------------- setter necessário paro estado ----///
+	public void setEstado(EstadoModel estado) {
+		this.estado = estado; 
+		
+	}
+
 	
 }
