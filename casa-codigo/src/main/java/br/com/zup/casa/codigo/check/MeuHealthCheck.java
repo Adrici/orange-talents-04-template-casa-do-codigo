@@ -7,6 +7,7 @@ import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.boot.actuate.health.Status;
 import org.springframework.stereotype.Component;
 
+
 @Component
 public class MeuHealthCheck implements HealthIndicator{
 
@@ -17,6 +18,7 @@ public class MeuHealthCheck implements HealthIndicator{
 	        details.put("descrição", "Meu primeiro Health Check customizado!");
 	        details.put("endereço", "127.0.0.1");
 	        
-	        return Health.status(Status.UP).withDetails(details).build();
+	        return Health.status(Status.UP).withDetails(details).build(); 
+	        
 	    } 
 }
